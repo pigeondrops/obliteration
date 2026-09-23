@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "obliteration"
+version = "0.1.0"
+description = "Oblique abliteration: remove the refusal direction while preserving a chosen second direction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "pigeondrops", email = "pigeondrops@protonmail.com" }]
+dependencies = [
+    "torch>=2.2",
+    "transformers>=4.44",
+    "safetensors>=0.4",
+    "optuna>=3.6",
+    "huggingface_hub>=0.23",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+oblique-abliterate = "obliteration.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["obliteration*"]
